@@ -26,8 +26,8 @@
 
 .success{
   background-color: green;
+  color: white;
 }
-
 
 h1{
   font-size: 3.5rem;
@@ -39,31 +39,37 @@ h1{
 
 form{
   margin: 0 auto;
+  width: 100%;
   
-  input,
-  select,
-  .todo-button{
+  .todo-input,
+  .filter-todo,
+  .todo-button {
     border: none;
     border-radius: 100vw;
   }
   
-  input{
+  .todo-input {
     width: 100%;
     padding: 0.75rem;
     font-size: 1.25rem;
   }
   
-  .todo-button{
-    width: 80px;
+  .todo-button {
+    width: 110px;
     aspect-ratio: 1;
     font-size: 1.5rem;
     color: orange;
     margin-inline: 1rem;
   }
   
-  select{
-    padding: 0.75rem;
-    font-size: 1rem;
+  .select {
+    width: 100%;
+    
+    .filter-todo {
+      padding: 0.75rem;
+      font-size: 1rem;
+      width: 100%;
+    }
   }
 }
 
@@ -79,7 +85,7 @@ form{
 .todo{
   margin-block: 1rem;
   // padding: 3rem;
-
+  
   li{
     background-color: white;
     color: #0C303E;
@@ -89,7 +95,7 @@ form{
     font-size: 1.25rem;
     border-radius: 100vw;
   }
-
+  
   .complete-btn,
   .trash-btn{
     width: 57px;
@@ -98,13 +104,62 @@ form{
     border-radius: 100%;
     background-color: white;
   }
-
+  
   .complete-btn{
     margin-inline: 0.5rem;
     color: green;
+    
+    &.success {
+      background-color: rgb(62, 157, 62);
+      color: white;
+    }
   }
-
+  
   .trash-btn{
     color: red;
   }
 }
+
+@media screen and (max-width: 650px) {
+  
+  h1{
+    font-size: 2.5rem;
+  }
+  
+  form {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+    "input input input"
+    "addtask filter filter";
+    gap: 1rem;
+    width: 100%;
+    
+    .todo-input {
+      grid-area: input;
+      width: 100%;
+    }
+    
+    .todo-button {
+      grid-area: addtask;
+      margin: 0;
+      width: 200px;
+      height: 44px;
+    }
+    
+    .select {
+      grid-area: filter;
+      width: 100%;
+      
+      .filter-todo {
+        width: 100%;
+      }
+    }
+  }
+  
+  .todo-list{
+    padding-inline: 0;
+  }
+}
+
