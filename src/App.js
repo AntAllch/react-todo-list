@@ -44,7 +44,7 @@ function App() {
   
   return (
     <div className="App">
-      <h1>What's the plan?</h1>
+      <h1>So, what's the plan?</h1>
       <Form 
         inputText={inputText}
         todos={todos} 
