@@ -1,0 +1,49 @@
+.App {
+  text-align: center;
+  background-image: linear-gradient(to bottom right, yellow, orange);
+  height: 100vh;
+}
+
+//Utility Classes
+
+.d-flex{
+  display: flex;
+}
+
+.jc{
+  justify-content: center;
+}
+
+.ai-c{
+  align-items: center;
+}
+
+.completed{
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.success{
+  background-color: green;
+}
+
+.todo-container{
+  width: min(95%, 500px);
+  margin: 4rem auto 0;
+}
+
+.todo-list{
+  list-style: none;
+}
+
+.todo{
+  margin: 1rem;
+
+  li{
+    background-color: red;
+    width: 100%;
+    margin-right: 1rem;
+    padding: 0.5rem
+  }
+  
+}
